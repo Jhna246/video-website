@@ -1,0 +1,20 @@
+import React from 'react';
+import Recommendation from './recommendation'
+
+const RecommendationList = (props) => {
+    const recommendationItems = props.videos.map((data) => {
+        return (
+        <Recommendation 
+        onVideoSelect = { props.onVideoSelect }
+        key={data.etag}
+        video={data} />
+        );
+    });
+    return (
+        <ul className='col-lg-4 list-group'>
+            {recommendationItems}
+        </ul>
+    )
+}
+
+export default RecommendationList
